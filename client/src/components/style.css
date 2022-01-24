@@ -1,0 +1,8 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 18px;
+  background-color: #986298;
+  margin-bottom: 1%;
+}
