@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const apiRouter = require("../routes/apiRoutes");
-const { corsConfig, rootPath } = require("../config");
+const { corsConfig } = require("../config");
 const path = require("path");
 
 const publicPath = path.join(__dirname, "../../client/build")
