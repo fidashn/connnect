@@ -8,7 +8,6 @@ const findAllUsers = async () => await User.find();
 
 
 const createNewUser = async (user) =>{
-// to do: check if user already exists
 if (await  ifExists(user.id)) {
 throw Error ("user already exists!");
 }
@@ -22,12 +21,13 @@ const deleteUserById = async (id)=>{
   if (await  ifExists(id)) {
     throw Error ("oops! try again please.");
     }else{
-      return ("deleted.");
+      return "deleted.";
     }
 }
 
 const moneyBalance = async(id, amount, num, str) => {
 if (await  !ifExists(id)) {
+// same thing
     throw Error ("oops! try again please.");
     }
 let user =  await findUserById(id);
@@ -43,11 +43,14 @@ return updatedUser;
 }
 
 const transfering= async (id,amount,targetId) =>{
-  if (await  !ifExists(id)&&!ifExists(targetId)) {
+  const isUserReciver = await ifExists(id);
+  const isUserTransferrer = await ifExists(targetId)
+  if (!isUserReciver || !isUserTransferrer) {
     throw Error ("Id Is Not Found!");
     }
   let user =  await findUserById(id);
-  if(user.cash + user.credit < amount){
+  const moneyIsNotEnough = user.cash + user.credit < amount
+  if(moneyIsNotEnough){
     throw new Error("You don't have enough money!");
   }
   let amountFromCash = Math.min(amount, user.cash);
@@ -57,6 +60,7 @@ const transfering= async (id,amount,targetId) =>{
   return [updateFirstUser, updateSecondUser];
 }
 
+// nice function
 
 
 module.exports={

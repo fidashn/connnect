@@ -3,6 +3,36 @@
   align-items: center;
   justify-content: space-evenly;
   font-size: 18px;
-  background-color: #986298;
+  background-color: #e4d0e4;
   margin-bottom: 1%;
+  width:100%;
+}
+.card-internal {
+width:20%;
+height: 50px;
+background-color: #b878b8;
+box-shadow: 3px 3px 3px 3px #fff;
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+}
+.flexing-center{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.get-user-block{
+  width:100%;
+  margin-top: 2%;
+}
+.delete-btn{
+  font-size: 18px;
+}
+
+.delete-btn:hover{
+  background-color: red;
+  color:#fff;
+  cursor: pointer;
 }

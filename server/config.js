@@ -7,3 +7,5 @@ const corsConfig = {
 }
 
 module.exports = {MONGO_URL, PORT, corsConfig,rootPath}
+
+// very nice like it

@@ -13,6 +13,8 @@ const {
 
 const apiRouter = express.Router();
 
+// apiRouter.use("/users", userRouter)
+
 apiRouter.get("/users", getAllUsers);
 
 apiRouter.get("/users/:id", getUser);
